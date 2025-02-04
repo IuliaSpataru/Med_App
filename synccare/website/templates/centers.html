@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Our Medical Centers | SynCCare{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Our Medical Centers</h1>
+    <p>SynCCare is proud to collaborate with leading medical centers across the globe. Our centers provide advanced healthcare services with the support of our cutting-edge monitoring technology. Each center is equipped with the latest SynCCare solutions to improve patient care and hospital management.</p>
+
+    <h3>Global Medical Centers</h3>
+    <p>Explore our global network of SynCCare medical centers. We partner with hospitals and clinics in multiple locations to offer healthcare solutions that cater to local needs:</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/nyc-medical-center.jpg' %}" class="card-img-top" alt="New York SynCCare Medical Center">
+                <div class="card-body">
+                    <h5 class="card-title">New York, USA</h5>
+                    <p class="card-text">SynCCare Medical Center in New York offers comprehensive services with state-of-the-art medical technology.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/london-medical-center.jpg' %}" class="card-img-top" alt="London SynCCare Health Clinic">
+                <div class="card-body">
+                    <h5 class="card-title">London, UK</h5>
+                    <p class="card-text">SynCCare Health Clinic in London is dedicated to providing high-quality care with expert staff and modern equipment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'images/paris-medical-center.jpg' %}" class="card-img-top" alt="Paris SynCCare Clinic">
+                <div class="card-body">
+                    <h5 class="card-title">Paris, France</h5>
+                    <p class="card-text">At SynCCare Clinic in Paris, we focus on holistic patient care, combining advanced treatments and compassionate support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Other Locations</h3>
+    <p>We are expanding our network of SynCCare centers to more locations worldwide. Here are additional cities where we operate:</p>
+
+    <ul>
+        <li>Berlin, Germany</li>
+        <li>Tokyo, Japan</li>
+        <li>Beijing, China</li>
+        <li>Toronto, Canada</li>
+        <li>Los Angeles, USA</li>
+        <li>Rome, Italy</li>
+        <li>Dubai, UAE</li>
+        <li>Singapore, Singapore</li>
+        <li>Mexico City, Mexico</li>
+        <li>São Paulo, Brazil</li>
+        <li>Hong Kong, China</li>
+    </ul>
+
+    <h3>Why Choose SynCCare Centers?</h3>
+    <p>Our centers offer:</p>
+    <ul>
+        <li>Advanced monitoring systems in each patient room and hallway</li>
+        <li>Real-time data access for medical staff to improve decision-making</li>
+        <li>Customized healthcare plans for individual patient needs</li>
+        <li>Global network for seamless collaboration and knowledge sharing</li>
+    </ul>
+
+    <h3>Interested in Collaborating?</h3>
+    <p>If you are a medical center interested in partnering with SynCCare or learning more about our solutions, please contact us at:</p>
+    <ul>
+        <li>Email: <a href="mailto:collaborations@synccare.com">collaborations@synccare.com</a></li>
+        <li>Phone: +1 800-555-1234</li>
+    </ul>
+
+    <p>- The SynCCare Team -</p>
+</div>
+{% endblock %}

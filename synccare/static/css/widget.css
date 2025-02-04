@@ -1,0 +1,42 @@
+#livechat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+#chat-widget {
+    background-color: #272727;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#chat-widget:hover {
+    background-color: #28a745 !important;
+}
+
+#chat-widget:hover #help-message {
+    display: block;
+}
+
+#help-message {
+    display: none;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: darkgrey;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}

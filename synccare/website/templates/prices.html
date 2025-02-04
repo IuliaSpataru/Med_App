@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Prices and Packages | SynCCare{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Collaboration Offers</h1>
+    <p>SynCCare provides tailored solutions for collaborations, suited to the needs of each medical unit. Regardless of the size of the hospital or clinic, we offer advanced monitoring technologies to improve patient care and operational efficiency.</p>
+
+    <h3>Collaboration Based on Medical Unit Capacity</h3>
+    <p>We offer flexible packages based on the number of beds and staff at the medical unit, including monitoring tablets for patient rooms and hallways. Choose the offer that best suits your needs:</p>
+
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>Capacity</th>
+                <th>Number of Beds</th>
+                <th>Staff</th>
+                <th>Required Tablets</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Small Clinic</td>
+                <td>10 - 20 beds</td>
+                <td>2 - 5 medical staff</td>
+                <td>2 tablets for rooms + 2 tablets for hallways</td>
+                <td>€500 / month</td>
+            </tr>
+            <tr>
+                <td>Medium Clinic</td>
+                <td>21 - 50 beds</td>
+                <td>6 - 15 medical staff</td>
+                <td>4 tablets for rooms + 4 tablets for hallways</td>
+                <td>€1200 / month</td>
+            </tr>
+            <tr>
+                <td>Large Hospital</td>
+                <td>51 - 100 beds</td>
+                <td>16 - 30 medical staff</td>
+                <td>6 tablets for rooms + 6 tablets for hallways</td>
+                <td>€2500 / month</td>
+            </tr>
+            <tr>
+                <td>University Hospital</td>
+                <td>100+ beds</td>
+                <td>31+ medical staff</td>
+                <td>10 tablets for rooms + 10 tablets for hallways</td>
+                <td>€5000 / month</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Collaboration Benefits</h3>
+    <ul>
+        <li>Real-time monitoring of patient status through tablets in each room.</li>
+        <li>Quick access to patient medical history and vital data.</li>
+        <li>Reducing human errors through automation of monitoring and reporting processes.</li>
+        <li>Constant technical support for system implementation and usage.</li>
+    </ul>
+
+    <h3>Contact Us for More Details</h3>
+    <p>For more information and to discuss personalized collaborations, feel free to contact us using the details below:</p>
+    <ul>
+        <li>Email: <a href="mailto:collaborations@synccare.com">collaborations@synccare.com</a></li>
+        <li>Phone: +1 800-555-1234</li>
+    </ul>
+
+    <p>- The SynCCare Team -</p>
+</div>
+{% endblock %}

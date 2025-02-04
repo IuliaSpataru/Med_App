@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - SynCCare{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+
+<div class="container about_us-page">
+    <section class="intro">
+        <h2>Our Mission: Connecting Care, Anytime, Anywhere</h2>
+        <div class="image-container">
+            <img src="{% static 'images/mission_aboutus.jpg' %}" alt="Our Mission" class="about-image">
+            <div class="text-overlay">
+                <p>
+                    SynCCare is a cutting-edge medical application designed to bridge the gap between patients and their families when communication is difficult. Developed with the vision to enhance accessibility to vital health information, SynCCare ensures that family members can stay informed about their loved one's condition at any time, even in the most challenging circumstances.
+                </p>
+                <p>
+                    The importance of clear communication during critical medical situations cannot be overstated. SynCCare was developed to address the emotional burden faced by families when they are unable to be physically present with their loved ones. By providing a platform for real-time updates and continuous access to care information, SynCCare empowers families to stay connected and informed, regardless of geographical or medical restrictions.
+                </p>
+                <p>
+                    With its secure, user-friendly interface, SynCCare is not only a solution for families but also a tool that assists healthcare professionals in delivering personalized care. The platform allows medical staff to document and share patient information efficiently, ensuring that families receive accurate and timely updates. By fostering trust and transparency between medical teams and families, SynCCare enhances the overall patient experience and strengthens the healthcare system’s ability to provide compassionate care.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="story">
+         <h3>The Story Behind SynCCare</h3>
+        <div class="image-container">
+            <img src="{% static 'images/story_aboutus.jpg' %}" alt="The Story Behind SynCCare" class="about-image">
+            <div class="text-overlay">
+                <p>
+                    The inspiration behind SynCCare came during the global COVID-19 pandemic. As hospitals filled up and families were unable to visit their loved ones, many patients, particularly those in critical care, could not communicate with their family members. This created a significant emotional burden for both patients and their families.
+                </p>
+                <p>
+                    SynCCare was born from the need to address this gap in communication. We understand that when a loved one is critically ill, the emotional stress of not knowing what’s happening can be overwhelming. That’s why SynCCare offers a real-time, secure platform for medical staff to input essential updates and care information into the application.
+                </p>
+                <p>
+                    This allows family members to stay connected and informed about their loved one's status, even when they cannot be physically present in the hospital.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact">
+        <h3>Global Impact</h3>
+        <div class="image-container">
+            <img src="{% static 'images/impact_aboutus.jpg' %}" alt="Global Impact" class="about-image">
+            <div class="text-overlay">
+                <p>
+                    From busy hospitals in metropolitan areas to small clinics in rural communities, SynCCare is helping healthcare providers offer greater transparency and accessibility to families. Our application is designed to scale, ensuring that no matter where you are, you have access to the care and updates you need.
+                </p>
+                <p>
+                    SynCCare is now trusted by healthcare providers in many countries and used in numerous hospitals and clinics worldwide. The application is adaptable to different medical environments, from busy urban hospitals to smaller rural clinics, providing access to critical care information no matter where patients are. By allowing seamless communication, we are not just enhancing patient care, but also improving the experience of the families who support them.
+                </p>
+                <p>
+                    Our platform helps make the healthcare journey more personal. By giving families the tools they need to track their loved one's recovery and care in real time, we ensure that they never feel disconnected, even when circumstances prevent them from being physically present. SynCCare is here to support families through the highs and lows of a patient’s journey, offering not only information but also peace of mind.
+                </p>
+                <p>
+                    With SynCCare, families no longer have to feel helpless during times of crisis. We’re here to provide the peace of mind they deserve, through technology that connects and cares.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision">
+        <h3>Our Vision</h3>
+        <div class="image-container">
+            <img src="{% static 'images/vision_aboutus.jpg' %}" alt="Our Vision" class="about-image">
+            <div class="text-overlay">
+                <p>
+                    At SynCCare, we envision a future where no patient is isolated from their loved ones, no matter how serious their condition is. We strive to create a world where families are part of the healing process, receiving timely and accurate information to make informed decisions.
+                </p>
+                <p>
+                     Our vision is rooted in the belief that communication is key to recovery. In a world where healthcare systems are becoming increasingly complex, we aim to simplify the way families and healthcare providers interact. By integrating modern technology with compassionate care, SynCCare ensures that no family member feels left in the dark, providing them with the tools they need to support their loved ones through every stage of their journey.
+                </p>
+                <p>
+                    As we continue to expand our reach, SynCCare is becoming an integral part of hospitals and clinics around the world. We are committed to ensuring that families, no matter where they are, can have access to real-time updates, allowing them to stay closely connected with the care and progress of their loved ones. In doing so, we hope to build a stronger sense of community within the healthcare environment, where patients and their families are always supported, informed, and empowered.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2025 SynCCare. All Rights Reserved.</p>
+</footer>
+
+{% endblock %}

@@ -8,15 +8,19 @@
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/body.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/widget.css' %}">
     <link rel="stylesheet" href="{% static 'css/logo.css' %}">
-
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
 </head>
-<body>
+<body class="home-page">
+
+<div class="background"></div>
 
 <!-- Navbar 1 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <div class="navbar-top w-100">
                 <ul class="navbar-nav ms-auto d-flex justify-content-end">
@@ -59,13 +63,13 @@
             <div class="navbar-collapse w-100" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Doctors</a>
+                        <a class="nav-link" href="{% url 'doctors' %}">Doctors</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="specialtiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{% url 'specialties' %}" id="specialtiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Specialties
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="specialtiesDropdown">
@@ -77,28 +81,22 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Centers</a>
+                        <a class="nav-link" href="{% url 'centers' %}">Centers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Prices</a>
+                        <a class="nav-link" href="{% url 'prices' %}">Prices</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Patients</a>
+                        <a class="nav-link" href="{% url 'patients' %}">Patients</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
                     </li>
                 </ul>
             </div>
-
-            <!-- Livechat -->
-        <div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; background-color: #808080; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease;">
-            <span style="color: white; font-size: 40px; font-weight: bold;">💬</span>
-            <span id="help-message" style="display: none; position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: white; padding: 5px 10px; border-radius: 5px; font-size: 12px;">Need help?</span>
-        </div>
         </div>
     </nav>
 
@@ -106,6 +104,12 @@
         {% block content %}
         {% endblock %}
     </div>
-
+ <!-- Livechat -->
+<div id="livechat-container">
+        <div id="chat-widget">
+            <span style="color: white; font-size: 40px; font-weight: bold;">💬</span>
+            <span id="help-message">Need assistance?</span>
+        </div>
+</div>
 </body>
 </html>

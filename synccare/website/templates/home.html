@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
+{% block body_class %}home-page{% endblock %}
+
 {% block content %}
-<div class="home-container">
+<div class="home-page-content">
+    <div class="home-container">
     <h2>Welcome to SynCCare!</h2>
-    <p> Thank you for trusting us with your healthcare needs. We are dedicated to providing you with high-quality, compassionate care, tailored to meet your individual needs.</p>
-    <div>
-    {% load static %}
-    <img src="{% static 'images/logo3.png' %}" alt="SynCCare Logo" class="home-logo">
+    <p>Thank you for trusting us with your healthcare needs. We are dedicated to providing you with high-quality, compassionate care, tailored to meet your individual needs.</p>
     </div>
-
 </div>
-
 {% endblock %}
+
+
