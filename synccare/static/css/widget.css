@@ -34,9 +34,10 @@
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: darkgrey;
+    background-color: #28a745;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
+    white-space: nowrap;
 }

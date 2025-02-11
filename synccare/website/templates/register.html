@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Register now for the SynCCare tracking app</h2>
+    <p class="text-center text-muted">Designed to simplify your healthcare journey for both you and your loved ones.</p>
+
+    <form method="post" class="mt-4 p-4 border rounded shadow-sm" style="background: rgba(200, 200, 200, 0.5);">
+        {% csrf_token %}
+
+        <fieldset class="mb-4">
+            <legend class="h5">Patient Personal Information</legend>
+            <div class="mb-3">{{ form.first_name.label_tag }} {{ form.first_name }}</div>
+            <div class="mb-3">{{ form.last_name.label_tag }} {{ form.last_name }}</div>
+            <div class="mb-3">{{ form.birth_date.label_tag }} {{ form.birth_date }}</div>
+            <div class="mb-3">{{ form.gender.label_tag }} {{ form.gender }}</div>
+            <div class="mb-3">{{ form.contact_number.label_tag }} {{ form.contact_number }}</div>
+            <div class="mb-3">{{ form.email_address.label_tag }} {{ form.email_address }}</div>
+        </fieldset>
+
+        <fieldset class="mb-4">
+            <legend class="h5">Representative (Third Party) Information</legend>
+            <div class="mb-3">{{ form.rep_first_name.label_tag }} {{ form.rep_first_name }}</div>
+            <div class="mb-3">{{ form.rep_last_name.label_tag }} {{ form.rep_last_name }}</div>
+            <div class="mb-3">{{ form.rep_contact_number.label_tag }} {{ form.rep_contact_number }}</div>
+        </fieldset>
+
+        <fieldset class="mb-4">
+            <legend class="h5">Room and Ward Information</legend>
+            <div class="mb-3">{{ form.room_number.label_tag }} {{ form.room_number }}</div>
+            <div class="mb-3">{{ form.ward.label_tag }} {{ form.ward }}</div>
+        </fieldset>
+
+        <fieldset class="mb-4">
+            <legend class="h5">Security Information</legend>
+            <div class="mb-3">{{ form.password1.label_tag }} {{ form.password1 }}</div>
+            <div class="mb-3">{{ form.password2.label_tag }} {{ form.password2 }}</div>
+            <div class="form-check mt-3">
+                <input type="checkbox" class="form-check-input" style="accent-color: green;"> {{ form.accept_terms.label_tag }}
+            </div>
+            <div class="form-check mt-2">
+                <input type="checkbox" class="form-check-input" style="accent-color: green;"> {{ form.third_party.label_tag }}
+            </div>
+        </fieldset>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg">Submit Registration</button>
+        </div>
+    </form>
+
+    <div id="location-container">
+        <a href="{% url 'contact_us' %}" id="location-widget" style=" text-decoration: none;">
+            <span style="font-size: 40px; font-weight: bold;">📍</span>
+            <span id="contact-message">Looking for a clinic?</span>
+        </a>
+    </div>
+
+    <div id="about-container">
+        <a href="{% url 'about_us' %}" id="about-widget" style="text-decoration: none;">
+            <i class="fas fa-comments" style="font-size: 40px;"></i>
+            <span id="about-message">Learn more about us</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

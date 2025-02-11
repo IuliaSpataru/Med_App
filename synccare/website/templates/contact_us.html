@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %}Contact Us | SynCCare{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
+    <form method="post" class="mt-4 p-4 border rounded shadow-sm" style="background: rgba(10, 10, 10, 0.5); color: white; padding: 50px; ">
+        {% csrf_token %}
     <h1>Contact Us</h1>
     <p>We are here to help! Below you will find the contact details of our global partner clinics. Feel free to reach out to any of our locations for support, inquiries, or more information about our services.</p>
 
     <h3>Our Global Locations</h3>
     <p>SynCCare partners with clinics and hospitals worldwide to provide the best healthcare services. Here are some of our partner locations:</p>
 
-    <table class="table table-striped mt-4">
+    <table class="table table-striped mt-4" style="color:white;">
         <thead>
             <tr>
                 <th>Location</th>
@@ -212,5 +213,21 @@
     <h3>Need Help?</h3>
     <p>For any further inquiries, please feel free to contact us by either method listed above and one of our representatives will gladly assist you. </p>
     <p> - SynCCare Support Team - </p>
+    </form>
+
+    <div id="location-container">
+        <a href="{% url 'contact_us' %}" id="location-widget" style=" text-decoration: none;">
+            <span style="font-size: 40px; font-weight: bold;">📍</span>
+            <span id="contact-message">Looking for a clinic?</span>
+        </a>
+    </div>
+
+    <div id="about-container">
+        <a href="{% url 'about_us' %}" id="about-widget" style="text-decoration: none;">
+            <i class="fas fa-comments" style="font-size: 40px;"></i>
+            <span id="about-message">Learn more about us</span>
+        </a>
+    </div>
+
 </div>
 {% endblock %}

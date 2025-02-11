@@ -9,6 +9,19 @@
     <h2>Find here information about your loved ones. </h2>
     <p>Write text here </p>
 
+    <div id="location-container">
+        <a href="{% url 'contact_us' %}" id="location-widget" style=" text-decoration: none;">
+            <span style="font-size: 40px; font-weight: bold;">📍</span>
+            <span id="contact-message">Looking for a clinic?</span>
+        </a>
+    </div>
+
+    <div id="about-container">
+        <a href="{% url 'about_us' %}" id="about-widget" style="text-decoration: none;">
+            <i class="fas fa-comments" style="font-size: 40px;"></i>
+            <span id="about-message">Learn more about us</span>
+        </a>
+    </div>
 </div>
 
 {% endblock %}

@@ -4,19 +4,19 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
-from .forms import CustomUserCreationForm
-
+from django.contrib.auth import login, logout
+from .forms import PatientForm
+from django.contrib import messages
 
 def register(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = PatientForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')
+            return redirect('login')
     else:
-        form = CustomUserCreationForm()
+        form = PatientForm()
 
     return render(request, 'register.html', {'form': form})
 
@@ -51,3 +51,9 @@ def about_us(request):
 
 def contact_us(request):
     return render(request, 'contact_us.html')
+
+
+def custom_logout(request):
+    logout(request)
+    messages.success(request, "You have been successfully logged out.")
+    return redirect('login')

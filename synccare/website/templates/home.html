@@ -1,14 +1,71 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block body_class %}home-page{% endblock %}
 
 {% block content %}
-<div class="home-page-content">
-    <div class="home-container">
-    <h2>Welcome to SynCCare!</h2>
-    <p>Thank you for trusting us with your healthcare needs. We are dedicated to providing you with high-quality, compassionate care, tailored to meet your individual needs.</p>
+
+<header class="hero text-center text-white d-flex align-items-center" style="background: url('{% static 'images/home.image.jpg' %}') center/cover no-repeat; height: 80vh;">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Connecting Care, Anytime, Anywhere</h1>
+        <p class="lead">SynCCare bridges the gap between patients and families with real-time medical updates.</p>
     </div>
+</header>
+
+<section class="container text-center mt-5">
+    <h2 class="mb-4 text-black">Why Choose SynCCare?</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card bg-dark text-white p-3 h-100 d-flex flex-column">
+                <i class="bi bi-shield-lock fs-1"></i>
+                <h4>Secure Data</h4>
+                <p>We prioritize security with end-to-end encryption.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white p-3 h-100 d-flex flex-column">
+                <i class="bi bi-clock-history fs-1"></i>
+                <h4>Real-Time Updates</h4>
+                <p>Instant patient status updates for families.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white p-3 h-100 d-flex flex-column">
+                <i class="bi bi-hospital fs-1"></i>
+                <h4>Hospital Integration</h4>
+                <p>Seamless connection with hospital systems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="text-center mt-5 py-4 bg-secondary text-white">
+    <h3>Ready to experience SynCCare?</h3>
+    <p>Join thousands of patients and doctors using SynCCare for better communication.</p>
+    <a href="{% url 'register' %}" class="btn btn-success btn-lg mb-5">Sign Up Now</a>
+</section>
+
+<div id="location-container">
+    <a href="{% url 'contact_us' %}" id="location-widget" style=" text-decoration: none;">
+        <span style="font-size: 40px; font-weight: bold;">📍</span>
+        <span id="contact-message">Looking for a clinic?</span>
+    </a>
 </div>
+
+<div id="about-container">
+    <a href="{% url 'about_us' %}" id="about-widget" style="text-decoration: none;">
+        <i class="fas fa-comments" style="font-size: 40px;"></i>
+        <span id="about-message">Learn more about us</span>
+    </a>
+</div>
+
+
+{% load static %}
 {% endblock %}
 
+{% block extra_css %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+
+{% endblock %}

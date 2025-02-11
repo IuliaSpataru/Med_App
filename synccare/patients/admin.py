@@ -6,6 +6,6 @@ from synccare.patients.models import Patient
 
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'date_of_birth', 'gender', 'room_number', 'admission_date', 'ward')
+    list_display = ('first_name', 'birth_date', 'gender', 'room_number', 'admission_date', 'ward')
     list_filter = ('ward', 'gender')
-    search_fields = ('full_name', 'room_number')
+    search_fields = ('first_name', 'last_name', 'room_number')

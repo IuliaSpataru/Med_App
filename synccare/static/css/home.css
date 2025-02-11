@@ -1,0 +1,68 @@
+/* Contact us widget */
+#location-container {
+    position: fixed;
+    bottom: 150px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#location-widget {
+    display: flex;
+    align-items: center;
+    background-color: #272727;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#contact-message {
+    display: none;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#location-widget:hover #contact-message {
+    display: inline-block;
+}
+
+#location-widget:hover {
+    background-color: #28a745 !important;
+}
+
+
+/* About US widget */
+
+#about-container {
+    position: fixed;
+    bottom: 250px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-widget {
+    display: flex;
+    align-items: center;
+    background-color: #272727;
+    padding: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+#about-message {
+    display: none;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#about-widget:hover #about-message {
+    display: inline-block;
+}
+
+#about-widget:hover {
+    background-color: #28a745 !important;
+}
+
+
