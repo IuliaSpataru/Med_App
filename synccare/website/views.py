@@ -26,7 +26,7 @@ def home(request):
 
 
 def doctors(request):
-    return render(request, 'doctors.html')
+    return render(request, 'community.html')
 
 
 def specialties(request):

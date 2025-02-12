@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'synccare.schedule',
     'synccare.wards',
     'synccare.website',
+
 ]
 
 MIDDLEWARE = [
