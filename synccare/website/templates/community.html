@@ -1,48 +1,35 @@
-
 {% extends 'base.html' %}
-
 {% load static %}
 
-{% block title %}Doctors - SynCCare{% endblock %}
-
 {% block content %}
-<div class="container doctors-page">
-    <h2>Our Doctors</h2>
-    <p>Meet our team of dedicated professionals.</p>
+    <h1 class="mb-5 mt-5 info-box">SynCCare Community</h1>
 
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="{% static 'images/doctor1.jpg' %}" class="card-img-top" alt="Doctor 1">
-                <div class="card-body">
-                    <h5 class="card-title">Dr. Jane Doe</h5>
-                    <p class="card-text">Cardiologist</p>
-                </div>
-            </div>
+
+    <div class="info-box custom-card mb-5">
+        <img src="{% static 'images/community_page.jpg' %}" alt="Community" class="img-fluid rounded mx-auto d-block"><br><br>
+        <h3>Discover What Our Community Has to Say</h3><br>
+        <h4>Take a moment to read the feedback from those who have experienced our services. Our community's reviews can provide valuable insights and help you make an informed decision.</h4>
+        <h4>Feel free to explore and see for yourself how we're continuously striving to improve and serve you better!</h4>
+
+    </div>
+    {% for review in reviews %}
+        <div class="review custom-card p-3 mb-3">
+            <h3>{{ review.name }} ({{ review.get_category_display }})</h3>
+            <p>Date: {{ review.date_posted }}</p>
+
+            <p>Rating:
+                {% for star in review.full_stars %}
+                    {{ star }}
+                {% endfor %}
+
+                {% for star in review.empty_stars %}
+                    {{ star }}
+                {% endfor %}
+            </p>
+
+            {% if review.comment %}
+                <p><strong>Comment:</strong> {{ review.comment }}</p>
+            {% endif %}
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="{% static 'images/doctor2.jpg' %}" class="card-img-top" alt="Doctor 2">
-                <div class="card-body">
-                    <h5 class="card-title">Dr. Jane Smith</h5>
-                    <p class="card-text">Neurologist</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="location-container">
-        <a href="{% url 'contact_us' %}" id="location-widget" style=" text-decoration: none;">
-            <span style="font-size: 40px; font-weight: bold;">📍</span>
-            <span id="contact-message">Looking for a clinic?</span>
-        </a>
-    </div>
-
-    <div id="about-container">
-        <a href="{% url 'about_us' %}" id="about-widget" style="text-decoration: none;">
-            <i class="fas fa-comments" style="font-size: 40px;"></i>
-            <span id="about-message">Learn more about us</span>
-        </a>
-    </div>
-</div>
-
+    {% endfor %}
 {% endblock %}

@@ -6,94 +6,37 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/about_us.css' %}">
 
-<div class="container mt-5" style="background: rgba(25, 25, 25, 0.5); color: white; font-size: 20px;">
-    <section class="intro text-center">
-        <h2 class="mb-4" style="color: white;">Our Mission: Connecting Care, Anytime, Anywhere</h2>
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="{% static 'images/mission_aboutus.jpg' %}" alt="Our Mission" class="img-fluid rounded fade-in">
-            </div>
-            <div class="col-md-6 text-box">
-                <p>
-                    SynCCare is a cutting-edge medical application designed to bridge the gap between patients and their families when communication is difficult.
-                </p>
-                <p>
-                    The importance of clear communication during critical medical situations cannot be overstated. SynCCare provides real-time updates and continuous access to care information, empowering families to stay connected and informed.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story text-center mt-5">
-        <h3 class="mb-4" style="color: white;">The Story Behind SynCCare</h3>
-        <div class="row align-items-center flex-md-row-reverse">
-            <div class="col-md-6">
-                <img src="{% static 'images/story_aboutus.jpg' %}" alt="Our Story" class="img-fluid rounded fade-in">
-            </div>
-            <div class="col-md-6 text-box">
-                <p>
-                    SynCCare was inspired by the challenges families faced during the COVID-19 pandemic when visiting restrictions created emotional distress.
-                </p>
-                <p>
-                    With a secure and user-friendly interface, SynCCare allows medical staff to document and share patient information efficiently, ensuring transparency between families and healthcare providers.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="impact text-center mt-5">
-        <h3 class="mb-4" style="color: white;">Global Impact</h3>
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <img src="{% static 'images/impact_aboutus.jpg' %}" alt="Global Impact" class="img-fluid rounded fade-in">
-            </div>
-            <div class="col-md-6 text-box">
-                <p>
-                    SynCCare is now trusted by hospitals and clinics worldwide. The application adapts to different medical environments, ensuring real-time access to critical patient information.
-                </p>
-                <p>
-                    By fostering trust and transparency, SynCCare strengthens the healthcare system and enhances the overall patient experience.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="vision text-center mt-5">
-        <h3 class="mb-4" style="color: white;">Our Vision</h3>
-        <div class="row align-items-center flex-md-row-reverse">
-            <div class="col-md-6">
-                <img src="{% static 'images/vision_aboutus.jpg' %}" alt="Our Vision" class="img-fluid rounded fade-in">
-            </div>
-            <div class="col-md-6 text-box">
-                <p>
-                    Our vision is to ensure that no patient feels isolated. We aim to create a world where families receive timely and accurate updates to stay informed and involved in the healing process.
-                </p>
-                <p>
-                    Through SynCCare, we bridge the gap between medical teams and families, offering seamless communication in all healthcare settings.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <div id="location-container">
-        <a href="{% url 'contact_us' %}" id="location-widget" style=" text-decoration: none;">
-            <span style="font-size: 40px; font-weight: bold;">📍</span>
-            <span id="contact-message">Looking for a clinic?</span>
-        </a>
+<div class="container mt-5">
+    <div class="info-box text-center">
+        <h2>Our Mission: Connecting Care, Anytime, Anywhere</h2>
+        <img src="{% static 'images/mission_aboutus.jpg' %}" alt="Our Mission" class="img-fluid rounded mx-auto d-block " >
+        <p>SynCCare is a cutting-edge medical application designed to bridge the gap between patients and their families when communication is difficult.</p>
+        <p>The importance of clear communication during critical medical situations cannot be overstated. SynCCare provides real-time updates and continuous access to care information, empowering families to stay connected and informed.</p>
     </div>
 
-    <div id="about-container">
-        <a href="{% url 'about_us' %}" id="about-widget" style="text-decoration: none;">
-            <i class="fas fa-comments" style="font-size: 40px;"></i>
-            <span id="about-message">Learn more about us</span>
-        </a>
+    <div class="info-box text-center">
+        <h3>The Story Behind SynCCare</h3>
+        <img src="{% static 'images/story_aboutus.jpg' %}" alt="Our Story" class="img-fluid rounded mx-auto d-block">
+        <p>SynCCare was inspired by the challenges families faced during the COVID-19 pandemic when visiting restrictions created emotional distress.</p>
+        <p>With a secure and user-friendly interface, SynCCare allows medical staff to document and share patient information efficiently, ensuring transparency between families and healthcare providers.</p>
     </div>
 
+    <div class="info-box text-center">
+        <h3>Global Impact</h3>
+        <img src="{% static 'images/impact_aboutus.jpg' %}" alt="Global Impact" class="img-fluid rounded mx-auto d-block">
+        <p>SynCCare is now trusted by hospitals and clinics worldwide. The application adapts to different medical environments, ensuring real-time access to critical patient information.</p>
+        <p>By fostering trust and transparency, SynCCare strengthens the healthcare system and enhances the overall patient experience.</p>
+    </div>
+
+    <div class="info-box text-center">
+        <h3>Our Vision</h3>
+        <img src="{% static 'images/vision_aboutus.jpg' %}" alt="Our Vision" class="img-fluid rounded mx-auto d-block">
+        <p>Our vision is to ensure that no patient feels isolated. We aim to create a world where families receive timely and accurate updates to stay informed and involved in the healing process.</p>
+        <p>Through SynCCare, we bridge the gap between medical teams and families, offering seamless communication in all healthcare settings.</p>
+    </div>
 </div>
 
-<footer class="text-center mt-5 py-3 bg-dark text-white">
-    <p>© 2025 SynCCare. All Rights Reserved.</p>
-</footer>
+
+
 
 {% endblock %}
-

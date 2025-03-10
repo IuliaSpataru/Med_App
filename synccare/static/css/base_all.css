@@ -37,3 +37,24 @@ body::before {
     color: white;
     text-align: center;
 }
+
+.global-info-box {
+    padding: 10px;  /* Reduci dimensiunea padding-ului */
+    font-size: 14px;  /* Scazi mărimea fontului */
+    max-width: 800px;  /* Faci secțiunea mai îngustă */
+    margin: 20px auto;  /* Centrezi și reduci marginile */
+    border-radius: 10px;  /* Opțional, adaugi colțuri rotunjite */
+}
+
+.global-info-box h3 {
+    font-size: 22px;  /* Scazi mărimea titlului */
+}
+
+.global-info-box p {
+    font-size: 16px;  /* Ajustezi textul */
+}
+
+.global-info-box .btn {
+    font-size: 18px;  /* Reduci dimensiunea butonului */
+    padding: 10px 20px;
+}

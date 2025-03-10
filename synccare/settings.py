@@ -38,12 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'synccare',
     'synccare.patients',
     'synccare.staff',
+    'synccare.static',
     'synccare.tasks',
     'synccare.schedule',
     'synccare.wards',
     'synccare.website',
+    'django_extensions',
 
 ]
 

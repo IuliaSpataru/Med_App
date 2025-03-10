@@ -9,6 +9,7 @@
     <form method="post" class="mt-4 p-4 border rounded shadow-sm" style="background: rgba(200, 200, 200, 0.5);">
         {% csrf_token %}
 
+        <!-- Personal information section -->
         <fieldset class="mb-4">
             <legend class="h5">Patient Personal Information</legend>
             <div class="mb-3">{{ form.first_name.label_tag }} {{ form.first_name }}</div>
@@ -19,6 +20,7 @@
             <div class="mb-3">{{ form.email_address.label_tag }} {{ form.email_address }}</div>
         </fieldset>
 
+        <!-- Representative information section -->
         <fieldset class="mb-4">
             <legend class="h5">Representative (Third Party) Information</legend>
             <div class="mb-3">{{ form.rep_first_name.label_tag }} {{ form.rep_first_name }}</div>
@@ -26,12 +28,14 @@
             <div class="mb-3">{{ form.rep_contact_number.label_tag }} {{ form.rep_contact_number }}</div>
         </fieldset>
 
+        <!-- Room and ward information section -->
         <fieldset class="mb-4">
             <legend class="h5">Room and Ward Information</legend>
             <div class="mb-3">{{ form.room_number.label_tag }} {{ form.room_number }}</div>
             <div class="mb-3">{{ form.ward.label_tag }} {{ form.ward }}</div>
         </fieldset>
 
+        <!-- Security and consent information -->
         <fieldset class="mb-4">
             <legend class="h5">Security Information</legend>
             <div class="mb-3">{{ form.password1.label_tag }} {{ form.password1 }}</div>
@@ -44,25 +48,37 @@
             </div>
         </fieldset>
 
+        <!-- Submit button -->
         <div class="text-center">
-            <button type="submit" class="btn btn-success btn-lg">Submit Registration</button>
+            <button type="submit" class="btn btn-success btn-lg mb-5 custom-card">Submit Registration</button>
         </div>
     </form>
-
-    <div id="location-container">
-        <a href="{% url 'contact_us' %}" id="location-widget" style=" text-decoration: none;">
-            <span style="font-size: 40px; font-weight: bold;">📍</span>
-            <span id="contact-message">Looking for a clinic?</span>
-        </a>
-    </div>
-
-    <div id="about-container">
-        <a href="{% url 'about_us' %}" id="about-widget" style="text-decoration: none;">
-            <i class="fas fa-comments" style="font-size: 40px;"></i>
-            <span id="about-message">Learn more about us</span>
-        </a>
-    </div>
 </div>
+
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.startsWith(name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    document.querySelector("form").addEventListener("submit", function (event) {
+        let csrftoken = getCookie('csrftoken');
+        if (!csrftoken) {
+            alert("CSRF token missing!");
+            event.preventDefault();
+        }
+    });
+</script>
 {% endblock %}
 
 
