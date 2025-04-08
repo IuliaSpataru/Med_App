@@ -15,4 +15,4 @@ class Task(models.Model):
     status = models.CharField(max_length=20, choices=status_choices, default='Pending')
 
     def __str__(self):
-        return f"Task: {self.task_description} for {self.patient.full_name} - Status: {self.status}"
+        return f"Task: {self.task_description} for {self.patient.first_name}{self.patient.last_name} - Status: {self.status}"

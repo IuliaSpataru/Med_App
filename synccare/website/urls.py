@@ -16,7 +16,7 @@ urlpatterns = [
     path('feedback-survey/', views.feedback_survey, name='feedback-survey'),
     path('contact_us/', views.contact_us, name='contact_us'),
     path('patient_portal/', views.patient_portal, name='patient-portal'),
-    path('request_offer', views.request_offer, name='request-offer'),
+    path('request_offer/', views.request_offer, name='request-offer'),
 
 
 ]

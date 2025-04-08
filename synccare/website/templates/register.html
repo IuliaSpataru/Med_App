@@ -41,48 +41,21 @@
             <div class="mb-3">{{ form.password1.label_tag }} {{ form.password1 }}</div>
             <div class="mb-3">{{ form.password2.label_tag }} {{ form.password2 }}</div>
             <div class="form-check mt-3">
-                <input type="checkbox" class="form-check-input" style="accent-color: green;"> {{ form.accept_terms.label_tag }}
+                {{ form.accept_terms }}
+                <label for="{{ form.accept_terms.id_for_label }}">I hereby agree to the terms and conditions.</label>
             </div>
             <div class="form-check mt-2">
-                <input type="checkbox" class="form-check-input" style="accent-color: green;"> {{ form.third_party.label_tag }}
-            </div>
+                {{ form.third_party }}
+                <label for="{{ form.third_party.id_for_label }}">I authorize the sharing of my information with a third party designated by me.</label>
+             </div>
         </fieldset>
 
         <!-- Submit button -->
         <div class="text-center">
-            <button type="submit" class="btn btn-success btn-lg mb-5 custom-card">Submit Registration</button>
+            <button type="submit" class="btn btn-success btn-lg mb-5 mt-5 custom-card">Submit Registration</button>
         </div>
     </form>
 </div>
 
-<script>
-    function getCookie(name) {
-        let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                if (cookie.startsWith(name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
 
-    document.querySelector("form").addEventListener("submit", function (event) {
-        let csrftoken = getCookie('csrftoken');
-        if (!csrftoken) {
-            alert("CSRF token missing!");
-            event.preventDefault();
-        }
-    });
-</script>
 {% endblock %}
-
-
-
-
-
-

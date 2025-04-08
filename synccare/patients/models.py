@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils.text import slugify
 
@@ -6,7 +7,7 @@ from django.utils.text import slugify
 class Patient(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, blank=True, null=True, default="")
-    username=models.CharField(max_length=150, blank=True, null=True, default="")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default="")
     birth_date = models.DateField()
     gender_choices = [
         ('M', 'Male'),
@@ -21,6 +22,7 @@ class Patient(models.Model):
     rep_contact_number = models.CharField(max_length=15, null=True, blank=True)
     room_number = models.IntegerField(null=True, blank=True)
     admission_date = models.DateTimeField(auto_now_add=True)
+
     WARD_CHOICES = [
         ('Cardiology', 'Cardiology'),
         ('Rheumatology', 'Rheumatology'),
@@ -32,8 +34,11 @@ class Patient(models.Model):
     ]
     ward = models.CharField(max_length=50, choices=WARD_CHOICES)
 
+    accept_terms = models.BooleanField(default=False)
+    third_party = models.BooleanField(default=False)
+
     def save(self, *args, **kwargs):
-        if not self.username:
+        if not self.user:
             base_username = slugify(f"{self.first_name}{self.last_name}")[:30]
             username = base_username
             counter = 1
@@ -44,6 +49,6 @@ class Patient(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return (f" Patient: {self.full_name} {self.last_name}, Gender: {self.gender}, born on {self.date_of_birth}, "
+        return (f" Patient: {self.first_name} {self.last_name}, Gender: {self.gender}, born on {self.birth_date}, "
                 f"Ward: {self.ward}, Admitted: {self.admission_date}")
 
